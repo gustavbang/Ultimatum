@@ -35,7 +35,7 @@ class Landingpage extends React.Component {
 
     render()  {
         return (
-            <Grid container alignItems={"center"} justify={"center"} style={{backgroundColor: '#3164CC', width: '100%', height: '1000px'}}>
+            <Grid container alignItems={"center"} justify={"center"} style={{backgroundColor: '#3164CC', width: '100%', height: '900px'}}>
                 <img src={Beer} style={{height: '600px'}}/>
             </Grid>
         )
