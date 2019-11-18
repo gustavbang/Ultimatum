@@ -1,12 +1,9 @@
 import React from 'react'
 import {Grid} from '@material-ui/core'
 
-import styled from 'styled-components';
-
 import Typography from "@material-ui/core/Typography";
 
 //images
-import MobileBackgroundDark from '../assets/img/mobile_background_dark.png'
 import Logo from '../assets/img/logo.png'
 import {Link} from "react-router-dom";
 import Background from "./Reuseables/Background";
