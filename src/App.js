@@ -9,6 +9,7 @@ import BadResult from "./components/game/BadResult";
 import GoodResult from "./components/game/GoodResult";
 import BeforeYouStart from "./components/BeforeYouStart";
 import Players from "./components/Players";
+import ChooseGame from "./components/ChooseGame";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
               <Route exact path="/" component={LandingPage}/>
               <Route exact path="/BeforeYouStart" component={BeforeYouStart}/>
               <Route exact path="/Players" component={Players}/>
+              <Route exact path="/ChooseGame" component={ChooseGame}/>
 
               <Route exact path="/spil" component={Spil}/>
 

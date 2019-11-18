@@ -5,17 +5,9 @@ import Grid from "@material-ui/core/Grid";
 
 
 //img
-import Logo from "../assets/img/logo.png";
 import Plus from "../assets/img/plus.png";
 import Minus from "../assets/img/minus.png";
 import {Link} from "react-router-dom";
-import Button from "@material-ui/core/Button";
-
-
-
-function rand() {
-    return Math.round(Math.random() * 20) - 10;
-}
 
 
 const useStyles = makeStyles(theme => ({
@@ -39,6 +31,10 @@ const useStyles = makeStyles(theme => ({
         width: '155px'
     }
 }));
+
+function savePlayerNames() {
+    console.log("Players saved..")
+}
 
 export default function Popup(props) {
 
@@ -76,7 +72,9 @@ export default function Popup(props) {
                                 <img src={Plus}/>
                             </btn>
                             </Grid>
-                        <Link style={{backgroundColor: '#50B72A', borderRadius: '25px', width: '110px', height: '15px', paddingTop: '6px'}} className={"button"} type="submit" to={"/Players"}>Accepter</Link>
+                        <btn onClick={savePlayerNames()}>
+                            <Link style={{backgroundColor: '#50B72A', borderRadius: '25px', width: '110px', height: '15px', paddingTop: '6px'}} className={"button"} type="submit" to={"/ChooseGame"}>Start</Link>
+                        </btn>
                     </Grid>
                 </Grid>
             </Modal>
