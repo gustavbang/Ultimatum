@@ -64,11 +64,11 @@ export default function Popup(props) {
                             </Grid>
                         </Grid>
                         <Grid container direction={"row"} justify={"center"}>
-                            <btn onClick={props.removeInput} style={{width: '20px', margin: '15px'}}>
+                            <btn onClick={props.removeInput} style={{width: '25px', margin: '15px'}}>
                                 <img src={Minus}/>
                             </btn>
 
-                            <btn onClick={props.addInput} style={{width: '20px', margin: '15px'}}>
+                            <btn onClick={props.addInput} style={{width: '35px', margin: '15px'}}>
                                 <img src={Plus}/>
                             </btn>
                             </Grid>

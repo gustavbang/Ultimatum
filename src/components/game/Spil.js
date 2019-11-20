@@ -9,16 +9,32 @@ import ThumbsDown from '../../assets/img/thumbs_down.png'
 import ThumbsUp from '../../assets/img/thumbs_up.png'
 import {Link} from "react-router-dom";
 import Background from "../Reuseables/Background";
-
+import {posts} from "../../assets/data/games";
 
 
 
 
 class Spil extends React.Component {
 
-    componentDidMount() {
+    constructor(props) {
+        super(props)
+        this.state = {
+            post: {},
+        }
     }
 
+    componentDidMount() {
+        this.pickRandomGame()
+    }
+
+    pickRandomGame() {
+        let min = Math.ceil(0);
+        let max = Math.floor(posts.length);
+        let rand =  Math.floor(Math.random() * (max - min)) + min;
+        console.log(rand)
+        console.log(posts[rand])
+        this.setState({post: posts[rand]} )
+    }
 
     render()  {
         return (
@@ -26,9 +42,8 @@ class Spil extends React.Component {
                 <Background/>
 
                 <Grid container direction={"column"} alignItems={"center"} justify={"center"}>
-                    <Typography style={{color: 'black', fontSize: '2em', fontFamily: 'Bitter', fontWeight: '700', marginBottom: '10px', marginTop: '25px'}}>Spotify battle</Typography>
-                    <Typography style={{color: 'black', fontSize: '1.0em', fontFamily: 'Bitter', fontWeight: '500', margin: '10px'}}>Personen der fik udfordringen er nu nynnemaster og dommer og den eneste der må se på telefonen. de resterende deltagere deles op i 2 hold. nynnemasteren får 3 sange at vælge imellem (3 runder). Nynnemasteren skal i hver af de 3 runder, vælge en af de 3 sange i spotify(eller lign) som han skal nynne for de 2 hold. det hold som først gætter sangen må give 5 tåre ud til modstanderholdet.
-                    </Typography>
+                    <Typography style={{color: 'black', fontSize: '2em', fontFamily: 'Bitter', fontWeight: '700', marginBottom: '10px', marginTop: '25px'}}>{this.state.post.title}</Typography>
+                    <Typography style={{color: 'black', fontSize: '1.0em', fontFamily: 'Bitter', fontWeight: '500', margin: '10px'}}>{this.state.post.content}</Typography>
 
                     <Grid direction={"row"}>
                         <Link to={"BadResult"}>
