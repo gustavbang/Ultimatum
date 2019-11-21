@@ -72,7 +72,7 @@ export default function Popup(props) {
                                 <img src={Plus}/>
                             </btn>
                             </Grid>
-                        <btn onClick={savePlayerNames()}>
+                        <btn onClick={savePlayerNames}>
                             <Link style={{backgroundColor: '#50B72A', borderRadius: '25px', width: '110px', height: '15px', paddingTop: '6px'}} className={"button"} type="submit" to={"/ChooseGame"}>Start</Link>
                         </btn>
                     </Grid>

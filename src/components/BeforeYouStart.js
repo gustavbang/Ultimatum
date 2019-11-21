@@ -4,7 +4,6 @@ import {Grid} from '@material-ui/core'
 import Typography from "@material-ui/core/Typography";
 
 //images
-import Logo from '../assets/img/logo.png'
 import DrinkResponsibly from '../assets/img/drink_responsibly.png'
 import AgeRequirements from '../assets/img/age_requirements.png'
 import AcceptTerms from '../assets/img/accept_terms.png'

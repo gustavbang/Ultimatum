@@ -12,6 +12,7 @@ class Players extends React.Component {
 
         this.state = {
             extraInputs: [],
+            players: []
         }
         this.handleChange = this.handleChange.bind(this);
 
@@ -39,7 +40,8 @@ class Players extends React.Component {
         return (
             <Grid container style={{width: '100%'}}>
                 <Background/>
-                <Popup extraInputs={this.state.extraInputs} addInput={() => this.addInput(this.state.extraInputs)} removeInput={() => this.removeInput(this.state.extraInputs)} handleChange={() => this.handleChange()}/>
+                <Popup extraInputs={this.state.extraInputs} addInput={() => this.addInput(this.state.extraInputs)} removeInput={() => this.removeInput(this.state.extraInputs)}
+                       handleChange={() => this.handleChange()}/>
 
             </Grid>
         )

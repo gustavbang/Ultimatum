@@ -1,25 +1,12 @@
 import React from 'react'
 import {Grid} from '@material-ui/core'
 
-import styled from 'styled-components';
 import Typography from "@material-ui/core/Typography";
-
-//images
-import ThumbsDown from '../../assets/img/thumbs_down.png'
-import ThumbsUp from '../../assets/img/thumbs_up.png'
 import {Link} from "react-router-dom";
 import Background from "../Reuseables/Background";
-import {posts} from "../../assets/data/games";
+import Beer from "../../assets/img/game_images/beer.png"
 
-
-import AwesomeSlider from 'react-awesome-slider';
-import 'react-awesome-slider/dist/styles.css';
-import WarmUp from "../../assets/img/categories/warmup.png";
-import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fold-out-animation';
-import BoysNight from "../../assets/img/categories/boysnight.png";
-import GirlsNight from "../../assets/img/categories/girlsnight.png";
-import Halloween from "../../assets/img/categories/halloween.png";
-
+import {postlist} from "../../assets/data/games";
 
 class Spil extends React.Component {
 
@@ -35,12 +22,34 @@ class Spil extends React.Component {
     }
 
     pickRandomGame() {
+        //Henter posts
+        let posts = JSON.parse(localStorage.getItem("posts"))
+
+        //sætter random range
         let min = Math.ceil(0);
         let max = Math.floor(posts.length);
+        //random algoritme
         let rand =  Math.floor(Math.random() * (max - min)) + min;
-        console.log(rand)
-        console.log(posts[rand])
-        this.setState({post: posts[rand]} )
+
+        //henter den valgte post
+        let post = posts[rand]
+        this.setState({post: post})
+
+        //fjerner den valgte post
+        posts.splice(rand,1)
+
+        //sætter det nye array uden den valgte post
+        localStorage.setItem("posts", JSON.stringify(posts))
+
+        console.log(posts.length)
+        //Resetter når alle spørgsmål er gået igennem
+        if (posts.length < 1) {
+            localStorage.setItem("posts", JSON.stringify(postlist))
+        }
+    }
+
+    refresh() {
+        window.location.reload()
     }
 
     render()  {
@@ -50,25 +59,15 @@ class Spil extends React.Component {
 
                 <Grid container direction={"column"} alignItems={"center"} justify={"center"}>
 
-                <AwesomeSlider cssModule={AwesomeSliderStyles}>
-                    <div> <img src={BoysNight} style={{width: '80vw', marginLeft: '10vw', marginTop: '10px'}}/></div>
-                    <div> <img src={WarmUp} style={{width: '80vw', marginLeft: '10vw', marginTop: '20px'}}/></div>
-                    <div> <img src={GirlsNight} style={{width: '80vw', marginLeft: '10vw', marginTop: '10px'}}/></div>
-                    <div> <img src={Halloween} style={{width: '80vw', marginLeft: '10vw', marginTop: '10px'}}/></div>
-                </AwesomeSlider>
+                    <btn onClick={this.refresh} style={{position: 'absolute', top: '0px', left: '0px', height: '100%', width: '100%'}}/>
 
-
-                    <Typography style={{color: 'black', fontSize: '2em', fontFamily: 'Bitter', fontWeight: '700', marginBottom: '10px', marginTop: '25px'}}>{this.state.post.title}</Typography>
+                    {this.state.post.img === "beer" &&
+                        <img src={Beer}/>
+                    }
+                    <Typography style={{color: 'black', fontSize: '2em', fontFamily: 'Bitter', fontWeight: '700', marginTop: '25px'}}>{this.state.post.title}</Typography>
+                    <Typography style={{color: 'black', fontSize: '1.5em', fontFamily: 'Bitter', fontWeight: '500', marginBottom: '10px'}}>{this.state.post.subtitle}</Typography>
                     <Typography style={{color: 'black', fontSize: '1.0em', fontFamily: 'Bitter', fontWeight: '500', margin: '10px'}}>{this.state.post.content}</Typography>
 
-                    <Grid direction={"row"}>
-                        <Link to={"BadResult"}>
-                            <img src={ThumbsDown} style={{width: '40px', margin: '20px'}}/>
-                        </Link>
-                        <Link to={"GoodResult"}>
-                            <img src={ThumbsUp} style={{width: '40px', margin: '20px'}}/>
-                        </Link>
-                    </Grid>
                 </Grid>
             </Grid>
         )

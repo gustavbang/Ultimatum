@@ -1,10 +1,5 @@
 import React from 'react'
 import {Grid} from '@material-ui/core'
-
-import styled from 'styled-components';
-
-import MobileBackgroundDark from "../assets/img/mobile_background_dark.png";
-
 import Typography from "@material-ui/core/Typography";
 
 import {Link} from "react-router-dom";
@@ -14,9 +9,14 @@ import stylesheet from '../assets/style.css'
 import Background from "./Reuseables/Background";
 //images
 
+import {postlist} from "../assets/data/games";
 
 
 class Landingpage extends React.Component {
+
+    componentDidMount() {
+        localStorage.setItem("posts" , JSON.stringify(postlist))
+    }
 
     render()  {
         return (
