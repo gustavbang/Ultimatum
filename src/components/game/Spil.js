@@ -12,6 +12,13 @@ import Background from "../Reuseables/Background";
 import {posts} from "../../assets/data/games";
 
 
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
+import WarmUp from "../../assets/img/categories/warmup.png";
+import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fold-out-animation';
+import BoysNight from "../../assets/img/categories/boysnight.png";
+import GirlsNight from "../../assets/img/categories/girlsnight.png";
+import Halloween from "../../assets/img/categories/halloween.png";
 
 
 class Spil extends React.Component {
@@ -42,6 +49,15 @@ class Spil extends React.Component {
                 <Background/>
 
                 <Grid container direction={"column"} alignItems={"center"} justify={"center"}>
+
+                <AwesomeSlider cssModule={AwesomeSliderStyles}>
+                    <div> <img src={BoysNight} style={{width: '80vw', marginLeft: '10vw', marginTop: '10px'}}/></div>
+                    <div> <img src={WarmUp} style={{width: '80vw', marginLeft: '10vw', marginTop: '20px'}}/></div>
+                    <div> <img src={GirlsNight} style={{width: '80vw', marginLeft: '10vw', marginTop: '10px'}}/></div>
+                    <div> <img src={Halloween} style={{width: '80vw', marginLeft: '10vw', marginTop: '10px'}}/></div>
+                </AwesomeSlider>
+
+
                     <Typography style={{color: 'black', fontSize: '2em', fontFamily: 'Bitter', fontWeight: '700', marginBottom: '10px', marginTop: '25px'}}>{this.state.post.title}</Typography>
                     <Typography style={{color: 'black', fontSize: '1.0em', fontFamily: 'Bitter', fontWeight: '500', margin: '10px'}}>{this.state.post.content}</Typography>
 
