@@ -15,7 +15,7 @@ import {postlist} from "../assets/data/games";
 class Landingpage extends React.Component {
 
     componentDidMount() {
-        localStorage.setItem("posts" , JSON.stringify(postlist))
+        localStorage.setItem("posts", JSON.stringify(postlist))
     }
 
     render()  {

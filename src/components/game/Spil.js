@@ -49,6 +49,7 @@ class Spil extends React.Component {
     }
 
     refresh() {
+        localStorage.setItem("posts", JSON.stringify(postlist))
         window.location.reload()
     }
 

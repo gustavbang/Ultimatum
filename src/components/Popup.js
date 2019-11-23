@@ -32,10 +32,6 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-function savePlayerNames() {
-    console.log("Players saved..")
-}
-
 export default function Popup(props) {
 
     const classes = useStyles();
@@ -49,14 +45,12 @@ export default function Popup(props) {
 
                         <h2>Tilføj spillere</h2>
                         <Grid container direction={"column"} alignItems={"center"}>
-                            <input className={classes.input} placeholder={"Torben"}/>
-                            <input className={classes.input} placeholder={"Børge"}/>
                             <Grid>
                             {
                                 props.extraInputs.map((value, index) => {
                                     return (
                                         <Grid container alignItems={'center'} key={index}>
-                                            <input className={classes.input}/>
+                                            <input className={classes.input} placeholder={"Navn"} onChange={props.handleChange.bind(this, index)}/>
                                         </Grid>
                                     )
                                 })
@@ -72,7 +66,7 @@ export default function Popup(props) {
                                 <img src={Plus}/>
                             </btn>
                             </Grid>
-                        <btn onClick={savePlayerNames}>
+                        <btn onClick={props.savePlayerNames}>
                             <Link style={{backgroundColor: '#50B72A', borderRadius: '25px', width: '110px', height: '15px', paddingTop: '6px'}} className={"button"} type="submit" to={"/ChooseGame"}>Start</Link>
                         </btn>
                     </Grid>
