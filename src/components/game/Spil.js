@@ -5,8 +5,9 @@ import Typography from "@material-ui/core/Typography";
 import {Link} from "react-router-dom";
 import Background from "../Reuseables/Background";
 import Beer from "../../assets/img/game_images/beer.png"
-
+import Info from "../../assets/img/info.png"
 import {postlist} from "../../assets/data/games";
+import InfoModal from "../InfoModal";
 
 class Spil extends React.Component {
 
@@ -14,6 +15,7 @@ class Spil extends React.Component {
         super(props)
         this.state = {
             post: {},
+            showModal: false
         }
     }
 
@@ -36,21 +38,26 @@ class Spil extends React.Component {
         this.setState({post: post})
 
         //fjerner den valgte post
-        posts.splice(rand,1)
+        let kus = posts.splice(rand,1)
+
 
         //sætter det nye array uden den valgte post
         localStorage.setItem("posts", JSON.stringify(posts))
 
-        console.log(posts.length)
         //Resetter når alle spørgsmål er gået igennem
         if (posts.length < 1) {
             localStorage.setItem("posts", JSON.stringify(postlist))
         }
+
     }
 
     refresh() {
-        localStorage.setItem("posts", JSON.stringify(postlist))
         window.location.reload()
+    }
+
+    showModal = () => {
+        console.log("Showing modal")
+        this.setState({showModal : !this.state.showModal})
     }
 
     render()  {
@@ -68,6 +75,11 @@ class Spil extends React.Component {
                     <Typography style={{color: 'black', fontSize: '2em', fontFamily: 'Bitter', fontWeight: '700', marginTop: '25px'}}>{this.state.post.title}</Typography>
                     <Typography style={{color: 'black', fontSize: '1.5em', fontFamily: 'Bitter', fontWeight: '500', marginBottom: '10px'}}>{this.state.post.subtitle}</Typography>
                     <Typography style={{color: 'black', fontSize: '1.0em', fontFamily: 'Bitter', fontWeight: '500', margin: '10px'}}>{this.state.post.content}</Typography>
+                    <btn onClick={this.showModal} style={{zIndex: '10000'}}>
+                        <img src={Info}/>
+                    </btn>
+
+                    {this.state.showModal && <InfoModal exit={this.showModal} description={this.state.post.description}/> }
 
                 </Grid>
             </Grid>

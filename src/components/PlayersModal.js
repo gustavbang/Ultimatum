@@ -11,11 +11,6 @@ import {Link} from "react-router-dom";
 
 
 const useStyles = makeStyles(theme => ({
-    modal: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
     paper: {
         position: 'absolute',
         width: window.innerWidth > 450 ? 400 : 250,
@@ -32,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function Popup(props) {
+export default function PlayersModal(props) {
 
     const classes = useStyles();
 
@@ -59,11 +54,11 @@ export default function Popup(props) {
                         </Grid>
                         <Grid container direction={"row"} justify={"center"}>
                             <btn onClick={props.removeInput} style={{width: '25px', margin: '15px'}}>
-                                <img src={Minus}/>
+                                <img src={Minus} style={{width: '50px'}}/>
                             </btn>
 
-                            <btn onClick={props.addInput} style={{width: '35px', margin: '15px'}}>
-                                <img src={Plus}/>
+                            <btn onClick={props.addInput} style={{width: '40px', margin: '15px'}}>
+                                <img src={Plus} style={{width: '45px'}}/>
                             </btn>
                             </Grid>
                         <btn onClick={props.savePlayerNames}>

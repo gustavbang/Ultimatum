@@ -14,7 +14,7 @@ class Background extends React.Component {
     render()  {
         return (
             <Grid style={{width: '100%'}}>
-                {window.outerWidth > 800 ?
+                {window.outerWidth > 700 ?
                     <img src={BG} style={{
                         position: 'absolute',
                         top: '0',

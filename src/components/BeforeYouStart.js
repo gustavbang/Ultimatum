@@ -24,11 +24,11 @@ class BeforeYouStart extends React.Component {
                         <Typography style={{color :'white', fontSize: '1.7em', fontFamily: 'Bitter', fontWeight: '500', marginTop: '10px'}}>Før du starter..</Typography>
 
                         <Grid container direction={"row"} justify={"center"}>
-                            <img src={DrinkResponsibly} style={{height: '75px', marginTop: '10px'}}/>
+                            <img src={AgeRequirements} style={{height: '75px', marginTop: '5px'}}/>
                             <Typography style={{color :'white', fontSize: '1.0em', fontFamily: 'Bitter', fontWeight: '500', margin: '15px', width: '150px'}}>Alle spillere er over 18 år</Typography>
                         </Grid>
                         <Grid container direction={"row"} justify={"center"}>
-                            <img src={AgeRequirements} style={{height: '75px', marginTop: '10px'}}/>
+                            <img src={DrinkResponsibly} style={{height: '75px', marginTop: '5px'}}/>
                             <Typography style={{color :'white', fontSize: '1.0em', fontFamily: 'Bitter', fontWeight: '500', margin: '15px', width: '150px'}}>Alle spillere drikker ansvarligt</Typography>
                         </Grid>
                         <Grid container direction={"row"} justify={"center"}>
