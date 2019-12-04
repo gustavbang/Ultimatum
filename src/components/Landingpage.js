@@ -1,5 +1,5 @@
 import React from 'react'
-import {Grid} from '@material-ui/core'
+import {Grid, makeStyles} from '@material-ui/core'
 
 import {Link} from "react-router-dom";
 
@@ -31,6 +31,7 @@ class Landingpage extends React.Component {
                     </Grid>
 
 
+                    <Grid container style={{backgroundColor: 'black', opacity: 0.8, width: '30vw', minWidth: '300px', height: '20vw', minHeight: '300px', borderRadius: '15px', paddingBottom: '20px'}} justify={"center"}>
 
                     <Grid container justify={"center"} alignItems={"center"} style={{width: '100vw', marginTop: '30px'}}>
                         <form action="https://gmail.us5.list-manage.com/subscribe/post?u=af0c1b08d198ac67e4c19d987&amp;id=52625faf3c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
@@ -43,6 +44,7 @@ class Landingpage extends React.Component {
                         <RalewayText margin={10}>Eller prøv spillet nu:</RalewayText>
 
                         <Grid container alignItems={"center"} justify={"center"}><Link className={"button"} type="submit" to={"/BeforeYouStart"}>Spil Ultimatum</Link></Grid>
+                    </Grid>
                     </Grid>
                 </Grid>
             </Grid>

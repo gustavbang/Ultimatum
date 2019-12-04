@@ -27,7 +27,7 @@ class BeforeYouStart extends React.Component {
                             <RalewayText width={150} margin={10}>Alle spillere er over 18 år</RalewayText>
                         </Grid>
                         <Grid container direction={"row"} justify={"center"}>
-                            <img src={DrinkResponsibly} style={{height: '75px', marginTop: '5px'}}/>
+                            <img src={DrinkResponsibly} style={{height: '75px', marginTop: '22px'}}/>
                             <RalewayText width={150} margin={10}>Alle spillere drikker ansvarligt</RalewayText>
                         </Grid>
                         <Grid container direction={"row"} justify={"center"}>
