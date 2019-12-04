@@ -11,6 +11,7 @@ import ChooseGame from "./components/ChooseGame";
 
 function App() {
   return (
+      <div style={{backgroundColor: '#FECA35'}}>
       <Router>
           <Switch>
               <Route exact path="/" component={LandingPage}/>
@@ -22,6 +23,7 @@ function App() {
 
           </Switch>
       </Router>
+      </div>
   );
 }
 

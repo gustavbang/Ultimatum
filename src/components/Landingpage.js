@@ -1,6 +1,5 @@
 import React from 'react'
 import {Grid} from '@material-ui/core'
-import Typography from "@material-ui/core/Typography";
 
 import {Link} from "react-router-dom";
 
@@ -10,6 +9,7 @@ import Background from "./Reuseables/Background";
 //images
 
 import {postlist} from "../assets/data/games";
+import RalewayText from "./Reuseables/RalewayText";
 
 
 class Landingpage extends React.Component {
@@ -23,32 +23,28 @@ class Landingpage extends React.Component {
             <Grid container style={{width: '100%'}}>
                 <Background/>
 
-                <Grid container direction={"column"} justify={"center"} >
+                <Grid container direction={"column"} justify={"center"} alignItems="center" style={{zIndex: '10'}}>
                     <Grid container justify={"center"} alignItems="center" direction={"column"}>
-                        <Grid style={{height: '50px', width: '100vw'}}/>
-                        <Typography style={{color: 'white', fontSize: '2.5em', fontFamily: 'Bitter', fontWeight: '700'}}>Ultimatum</Typography>
-                        <Typography style={{color: 'white', fontSize: '1.5em', fontFamily: 'Bitter', fontWeight: '500'}}>Festen starter her!</Typography>
-
+                        <Grid style={{height: '30px', width: '100vw'}}/>
+                        <RalewayText fontSize={2.5} bold>Ultimatum</RalewayText>
+                        <RalewayText fontSize={1.5}>Festen starter her!</RalewayText>
                     </Grid>
 
 
 
                     <Grid container justify={"center"} alignItems={"center"} style={{width: '100vw', marginTop: '30px'}}>
                         <form action="https://gmail.us5.list-manage.com/subscribe/post?u=af0c1b08d198ac67e4c19d987&amp;id=52625faf3c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                            <Typography style={{color :'white', fontSize: '1.2em', fontFamily: 'Bitter', fontWeight: '500', marginBottom: '10px', marginLeft: '20px'}}>Skriv dig på maillisten for tidlig adgang til Ultimatum</Typography>
-
+                            <RalewayText margin={10}>Skriv dig på maillisten for tidlig adgang til Ultimatum</RalewayText>
                             <Grid container alignItems={"center"} justify={"center"}><input className={"button"} type="submit" value="Tilmeld" name="subscribe" id="mc-embedded-subscribe"/></Grid>
                         </form>
                     </Grid>
 
                     <Grid container justify={"center"} alignItems={"center"} style={{width: '100vw', marginTop: '30px'}}>
-                        <Typography style={{color :'white', fontSize: '1.2em', fontFamily: 'Bitter', fontWeight: '500', marginBottom: '10px'}}>Eller prøv spillet nu:</Typography>
+                        <RalewayText margin={10}>Eller prøv spillet nu:</RalewayText>
 
                         <Grid container alignItems={"center"} justify={"center"}><Link className={"button"} type="submit" to={"/BeforeYouStart"}>Spil Ultimatum</Link></Grid>
                     </Grid>
-
                 </Grid>
-
             </Grid>
         )
     }

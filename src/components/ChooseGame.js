@@ -58,14 +58,15 @@ class ChooseGame extends React.Component {
     render()  {
         return (
             <Grid container style={{width: '100%'}} alignItems={"center"} justify={"center"}>
+                <Background/>
 
+                <div style={{zIndex: '10'}}>
                 {this.state.showLoginModal === true ?
                     <LoginModal handleChange={this.handleChange} login={this.login} showLoginModal={this.showLoginModal} showWrongPassword={this.state.showWrongPassword}/>
                     :
                     <Grid/>
                 }
 
-                <Background/>
 
                 <btn onClick={this.startGame}>
                     <Link type="submit" to={"/spil"}>
@@ -102,6 +103,7 @@ class ChooseGame extends React.Component {
                         </btn>
                     </Grid>
                 }
+                </div>
             </Grid>
         )
     }

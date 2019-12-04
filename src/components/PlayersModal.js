@@ -8,6 +8,7 @@ import Grid from "@material-ui/core/Grid";
 import Plus from "../assets/img/plus.png";
 import Minus from "../assets/img/minus.png";
 import {Link} from "react-router-dom";
+import RalewayText from "./Reuseables/RalewayText";
 
 
 const useStyles = makeStyles(theme => ({
@@ -38,14 +39,14 @@ export default function PlayersModal(props) {
                     <Grid container className={classes.paper} justify={"center"}>
                         <Grid style={{position: 'absolute', top: '0', left: '0', width: '100%', height: '100%', backgroundColor: 'black', opacity: 0.5, borderRadius: '25px', zIndex: '-10'}}/>
 
-                        <h2>Tilføj spillere</h2>
+                        <RalewayText bold>Tilføj spillere</RalewayText>
                         <Grid container direction={"column"} alignItems={"center"}>
                             <Grid>
                             {
                                 props.extraInputs.map((value, index) => {
                                     return (
                                         <Grid container alignItems={'center'} key={index}>
-                                            <input className={classes.input} placeholder={"Navn"} onChange={props.handleChange.bind(this, index)}/>
+                                            <input type={"text"} className={classes.input} placeholder={"Spiller"} onChange={props.handleChange.bind(this, index)}/>
                                         </Grid>
                                     )
                                 })
@@ -54,15 +55,15 @@ export default function PlayersModal(props) {
                         </Grid>
                         <Grid container direction={"row"} justify={"center"}>
                             <btn onClick={props.removeInput} style={{width: '25px', margin: '15px'}}>
-                                <img src={Minus} style={{width: '50px'}}/>
+                                <img src={Minus} style={{width: '45px'}}/>
                             </btn>
 
                             <btn onClick={props.addInput} style={{width: '40px', margin: '15px'}}>
-                                <img src={Plus} style={{width: '45px'}}/>
+                                <img src={Plus} style={{width: '41.5px'}}/>
                             </btn>
                             </Grid>
                         <btn onClick={props.savePlayerNames}>
-                            <Link style={{backgroundColor: '#50B72A', borderRadius: '25px', width: '110px', height: '15px', paddingTop: '6px'}} className={"button"} type="submit" to={"/ChooseGame"}>Start</Link>
+                            <Link style={{backgroundColor: '#50B72A', borderRadius: '25px', width: '110px', height: '15px', paddingTop: '8px'}} className={"button"} type="submit" to={"/ChooseGame"}>Start</Link>
                         </btn>
                     </Grid>
                 </Grid>

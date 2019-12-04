@@ -21,7 +21,7 @@ class Background extends React.Component {
                         left: '0',
                         width: '100%',
                         height: '100%',
-                        zIndex: '-10'
+                        zIndex: '1'
                     }}/>
                     :
                     <img src={MobileBG} style={{
@@ -30,11 +30,11 @@ class Background extends React.Component {
                         left: '0',
                         width: '100%',
                         height: '100%',
-                        zIndex: '-10'
+                        zIndex: '1'
                     }}/>
                 }
                 <Grid container justify={"center"} alignItems={"center"}>
-                    <img src={Logo} style={{height: '120px'}}/>
+                    <img src={Logo} style={{height: '120px', zIndex: 2}}/>
                 </Grid>
             </Grid>
         )
