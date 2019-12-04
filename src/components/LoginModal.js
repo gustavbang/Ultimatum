@@ -4,6 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Grid from "@material-ui/core/Grid";
 import Exit from "../assets/img/exit.png";
 import RalewayText from "./Reuseables/RalewayText";
+import {Link} from "react-router-dom";
 
 
 const useStyles = makeStyles(theme => ({
@@ -40,12 +41,12 @@ export default function LoginModal(props) {
                             <img src={Exit}/>
                         </btn>
                         <RalewayText bold>Indtast din nøgle</RalewayText>
-                        <input className={classes.input} placeholder={"Nøgle"} onChange={props.handleChange.bind(this)}/>
+                        <input className={classes.input} style={{marginBottom: '8px'}} placeholder={"Nøgle"} onChange={props.handleChange.bind(this)}/>
                         {props.showWrongPassword === true ?
                             <RalewayText color={'red'} fontSize={0.8}>Forkert nøgle, prøv igen</RalewayText>
                             : <Grid/>
                         }
-                        <RalewayText fontSize={1.0}>Ingen nøgle? klik her for at købe adgang</RalewayText>
+                        <Link to={"Payment"}><RalewayText style={{textDecoration: 'underline'}} fontSize={1.0}>Ingen nøgle? klik her for at købe adgang</RalewayText></Link>
                         <button className={"btn"} onClick={props.login.bind(this)}>
                             Login
                         </button>
