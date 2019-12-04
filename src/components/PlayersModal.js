@@ -46,7 +46,7 @@ export default function PlayersModal(props) {
                                 props.extraInputs.map((value, index) => {
                                     return (
                                         <Grid container alignItems={'center'} key={index}>
-                                            <input type={"text"} className={classes.input} placeholder={"Spiller"} onChange={props.handleChange.bind(this, index)}/>
+                                            <input type={"text"} className={classes.input} placeholder={"Spiller½"} onChange={props.handleChange.bind(this, index)}/>
                                         </Grid>
                                     )
                                 })

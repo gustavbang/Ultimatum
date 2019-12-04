@@ -6,7 +6,7 @@ import Grid from "@material-ui/core/Grid";
 
 //img
 import Exit from "../assets/img/exit.png";
-import Typography from "@material-ui/core/Typography";
+import RalewayText from "./Reuseables/RalewayText";
 
 
 const useStyles = makeStyles(theme => ({
@@ -39,7 +39,7 @@ export default function InfoModal(props) {
                         </Grid>
 
                         <Grid container justify={"center"} alignItems={"center"}>
-                            <Typography style={{color: 'white', fontSize: '1.0em', fontFamily: 'Bitter', fontWeight: '500'}}>{this.props.description}</Typography>
+                            <RalewayText>{props.description}</RalewayText>
                         </Grid>
 
                     </Grid>

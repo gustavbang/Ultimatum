@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Grid from "@material-ui/core/Grid";
 import Exit from "../assets/img/exit.png";
-import {Typography} from "@material-ui/core";
+import RalewayText from "./Reuseables/RalewayText";
 
 
 const useStyles = makeStyles(theme => ({
@@ -39,15 +39,13 @@ export default function LoginModal(props) {
                         <btn onClick={props.showLoginModal} style={{position: 'absolute', top: '12px', left: '10px'}}>
                             <img src={Exit}/>
                         </btn>
-                        <h3>Indtast din nøgle</h3>
+                        <RalewayText bold>Indtast din nøgle</RalewayText>
                         <input className={classes.input} placeholder={"Nøgle"} onChange={props.handleChange.bind(this)}/>
                         {props.showWrongPassword === true ?
-                            <Typography
-                                style={{color: 'red', fontSize: '0.8em', fontFamily: 'Bitter', fontWeight: '500'}}>Forkert
-                                nøgle, prøv igen</Typography>
+                            <RalewayText color={'red'} fontSize={0.8}>Forkert nøgle, prøv igen</RalewayText>
                             : <Grid/>
                         }
-                        <h5>Ingen nøgle? klik her for at købe adgang</h5>
+                        <RalewayText fontSize={1.0}>Ingen nøgle? klik her for at købe adgang</RalewayText>
                         <button className={"btn"} onClick={props.login.bind(this)}>
                             Login
                         </button>

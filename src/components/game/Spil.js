@@ -16,6 +16,7 @@ import Hand from "../../assets/img/game_images/hand.png"
 import Lipsync from "../../assets/img/game_images/lipsync.png"
 import Tongue from "../../assets/img/game_images/tongue.png"
 import Twerk from "../../assets/img/game_images/twerk.png"
+import RalewayText from "../Reuseables/RalewayText";
 
 
 class Spil extends React.Component {
@@ -104,14 +105,14 @@ class Spil extends React.Component {
                         <img src={Twerk} style={{height: '160px'}}/>
                         }
 
-                        <Typography style={{color: 'black', fontSize: '2em', fontFamily: 'Bitter', fontWeight: '700', marginTop: '25px'}}>{this.state.post.title}</Typography>
-                        <Typography style={{color: 'black', fontSize: '1.5em', fontFamily: 'Bitter', fontWeight: '500', marginBottom: '10px'}}>{this.state.post.subtitle}</Typography>
-                        <Typography style={{color: 'black', fontSize: '1.0em', fontFamily: 'Bitter', fontWeight: '500', margin: '10px'}}>{this.state.post.content}</Typography>
+                        <RalewayText color={'black'} fontSize={2.0} bold>{this.state.post.title}</RalewayText>
+                        <RalewayText color={'black'} fontSize={1.5} >{this.state.post.subtitle}</RalewayText>
+                        <RalewayText color={'black'} fontSize={1.0} >{this.state.post.content}</RalewayText>
                         <btn onClick={this.showModal} style={{zIndex: '10000'}}>
                             <img src={Info}/>
                         </btn>
 
-                        {this.state.showModal && <InfoModal exit={this.showModal} description={this.state.post.description}/> }
+                        {this.state.showModal && <InfoModal exit={this.showModal} description={"ingen info"}/> }
 
                     </Grid>
                 </div>
