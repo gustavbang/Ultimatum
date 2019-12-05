@@ -108,7 +108,7 @@ class Spil extends React.Component {
                         <Grid container direction="column" alignItems="center" style={{maxWidth: '800px'}}>
                         <RalewayText color={'black'} fontSize={2.0} bold>{this.state.post.title}</RalewayText>
                         <RalewayText color={'black'} fontSize={1.5} >{this.state.post.subtitle}</RalewayText>
-                        <RalewayText color={'black'} fontSize={1.0} >{this.state.post.content}</RalewayText>
+                        <RalewayText color={'black'} fontSize={1.0} margin={20}>{this.state.post.content}</RalewayText>
                         </Grid>
                         <btn onClick={this.showModal} style={{zIndex: '10000'}}>
                             <img src={Info}/>
